@@ -1,0 +1,114 @@
+@charset "utf-8";
+
+.inner {
+    width: 38rem;
+    margin: 0 auto;
+}
+
+#header {
+    position: absolute; /* absolute하면 쪼구라듦 */
+    top: 2rem;
+    left: 0;
+    z-index: 999;
+
+    width: 100%; /* 얘가 소속되어있는 곳은 viewport이기 때문에 그걸 기준으로 가로길이를 100% */
+}
+
+#header nav {
+    height: 8rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gnb {
+    display: none;
+}
+
+.logo a {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    background: url(../img/logo-m.svg) no-repeat 50% / contain;
+}
+
+.util-menu {
+    display: flex;
+    gap: 1rem;
+}
+
+/* form요소는 모두 inline-block, inline은 html의 공백을 간격으로 해석함;; 그걸 flex시키면 딱 붙고 gap으로 조정하면 됨 */
+.util-menu button {
+    width: 4rem;
+    height: 4rem;
+    background: no-repeat 50%;
+
+    border: 1px solid var(--white70p);
+    border-radius: 50%;
+}
+
+/* button.btn-menu 사이 안 띄고 붙여쓰면 btn-menu인 button이라는 뜻 */
+.util-menu button.btn-menu {
+    background-image: url(../img/ico-menu.svg);
+}
+
+.util-menu button.btn-contact {
+    background-image: url(../img/ico-contact.svg);
+}
+
+.visual {
+    height: 52rem;
+    background: cornsilk;
+
+    position: relative;
+}
+
+.video-wrap {
+    height: 100%;
+}
+
+.video-wrap::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* t0 + l0 + r0 + b0 = w100p + h100p = inset: 0 */
+
+    background: var(--gradient);
+    opacity: 0.8;
+}
+
+.visual-title {
+    position: absolute;
+    top: 14.9rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 38rem;
+}
+
+.visual-title h2 {
+    font-weight: 700;
+    font-size: 3.6rem;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.visual-title p {
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 1.2;
+    color: #fff;
+
+    margin-top: 2rem;
+}
+
+.btn-cta {
+    background: #fff;
+    color: var(--main-color);
+    margin: 4.8rem auto 0;
+}
