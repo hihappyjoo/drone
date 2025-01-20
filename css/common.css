@@ -72,7 +72,8 @@ button {
 body {
     font: 1.6rem/1.7 "Montserrat", sans-serif; /* 영문과 숫자는 영어폰트 우선 */
     color: var(--text-color);
-    word-break: keep-all;
+    word-break: keep-all; /* ttc: 첫글자를 대문자로 */
+    text-transform: capitalize;
 }
 
 .btn {
@@ -93,4 +94,20 @@ body {
 .btn-black {
     background: #000;
     color: #fff;
+}
+
+.text-gra {
+    /* 텍스트 그라데이션 적용 */
+    background: var(--gradient);
+    background-clip: text;
+    /* -webkit- : webkit기반 브라우저에서만 작동한다는 뜻 */
+    -webkit-text-fill-color: transparent;
+    /* ㄴ지원 안 하는 브라우저에서는 color: transparent하면 안보이기 때문에 지원 안되는 브라우저에서는 무시되는 webkit써줘야함 */
+    display: inline-block;
+}
+
+.sec-title {
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 1.2;
 }

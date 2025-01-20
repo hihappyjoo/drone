@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 .inner {
-    width: 38rem;
+    width: 88.785%;
     margin: 0 auto;
 }
 
@@ -89,6 +89,7 @@
     transform: translateX(-50%);
 
     width: 38rem;
+    width: 88.785%;
 }
 
 .visual-title h2 {
@@ -111,4 +112,256 @@
     background: #fff;
     color: var(--main-color);
     margin: 4.8rem auto 0;
+}
+
+.introduce {
+    padding: 4rem 0;
+    background: #f5f5f5;
+}
+
+.introduce-list li {
+    display: flex;
+    gap: 4rem;
+
+    min-height: 16.8rem;
+    padding: 1.2rem 0;
+}
+
+.introduce-list li::before {
+    content: "";
+    display: block;
+    width: 9rem;
+    height: 9rem;
+    background: no-repeat 50% / contain;
+    /* bg: xxx xx xx / "bgi size" 
+    cover: 100% auto = x축 100% y축 비율맞춰*/
+}
+
+.introduce-list li:nth-child(1)::before {
+    background-image: url(../img/intro-ico1.png);
+}
+.introduce-list li:nth-child(2)::before {
+    background-image: url(../img/intro-ico2.png);
+}
+.introduce-list li:nth-child(3)::before {
+    background-image: url(../img/intro-ico3.png);
+}
+.introduce-list li:nth-child(4)::before {
+    background-image: url(../img/intro-ico4.png);
+}
+
+.introduce-list li dl {
+    width: 24.9rem;
+    width: 65.5263%;
+}
+
+.introduce-list li dl dt {
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 1.2;
+}
+.introduce-list li dl dd {
+    margin-top: 0.8rem;
+    line-height: 1.5;
+}
+
+.introduce .btn {
+    margin: 0 auto;
+}
+
+.competitive {
+    padding: 6rem 0;
+    background: url(../img/drone-pic3.jpg) no-repeat 100% 100% / 70% auto; /* bgi는 공간기준 % */
+}
+
+.competitive h2 + p {
+    margin-top: 2rem;
+}
+
+.competitive-list-wrap {
+    /* border: 1px solid rebeccapurple; */
+    overflow-x: scroll; /* swiper대신 스크롤방식 */
+    margin-top: 4.1rem;
+}
+
+.competitive-list {
+    display: flex;
+    gap: 1.1rem;
+
+    /* 1.카운터 세팅 */
+    counter-reset: competitive;
+}
+
+.competitive-list li {
+    display: flex;
+    gap: 2.4rem;
+
+    width: 38rem;
+    height: 12.5rem;
+    padding: 1rem;
+
+    border: 1px solid #fff;
+    border-radius: 1rem;
+    background: var(--white80p);
+    backdrop-filter: blur(2px);
+
+    flex-shrink: 0; /* 쪼그라들지마 명령 */
+
+    /* 2.카운터 증가 */
+    counter-increment: competitive;
+}
+
+.competitive-list li::before {
+    /* 3. 카운터 적용 */
+    content: counter(competitive);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    width: 6rem;
+    height: 6rem;
+
+    border: 1px solid var(--black50p);
+    border-radius: 50%;
+
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+.competitive-list li p {
+    font-size: 1.4rem;
+    color: #a7acbc;
+
+    /* 4줄 제한 */
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.product-list {
+}
+.product-list li {
+    padding-bottom: 25rem;
+    background: #fff;
+
+    position: relative;
+}
+
+.product-list li figure {
+    /* aspect-ratio: 1/1.215; */
+    height: 52rem;
+}
+
+.product-list li .product-con {
+    position: absolute;
+    bottom: 2.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 38rem;
+    min-height: 45rem;
+    padding: 6rem 4rem;
+    background: #f5f5f5;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-list li .product-con h3 {
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+.product-list li .product-con p {
+    margin-top: 2.4rem;
+}
+
+.product-list li .product-con .btn-black {
+    margin-top: 2.4rem;
+}
+
+.newsletter {
+    /* aspect-ratio: 1/1.028; */
+    height: 44rem;
+    background: url(../img/newslatter-bg.jpg) no-repeat 50% / cover fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newsletter-con {
+    width: 38rem;
+}
+
+.newsletter-con h4 {
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.newsletter-con .form-wrap {
+    height: 4.8rem;
+    border: 1px solid #fff;
+    border-radius: 6rem;
+    background: var(--white20p);
+
+    display: flex; /* flex공간의 item들은 세로길이를 stratch함 */
+    overflow: hidden;
+
+    margin-top: 4.8rem;
+}
+
+.newsletter-con .form-wrap input {
+    background: transparent;
+    width: calc(100% - 8.4rem);
+    padding: 1px 2.8rem;
+}
+
+.newsletter-con .form-wrap input::placeholder {
+    color: #fff;
+}
+
+.newsletter-con .form-wrap button {
+    width: 8.4rem;
+    border-radius: 6rem;
+    background: #fff;
+    color: var(--main-color);
+}
+
+#footer {
+    padding: 8rem 0;
+    background: #2c2e33;
+}
+
+#footer .inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.8rem;
+}
+
+#footer .foot-logo {
+    display: block;
+    width: 24.6rem;
+    height: 3.6rem;
+    background: url(../img/foot-logo.png) no-repeat 50% / contain;
+}
+
+#footer p {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: var(--white60p);
+    text-align: center;
+}
+
+#footer p em {
+    display: block;
+    margin-top: 0.5rem;
 }
